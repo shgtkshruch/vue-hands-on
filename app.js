@@ -11,6 +11,7 @@ const app = new Vue({
       textAlign: 'center',
     },
     showMessage: true,
+    tasks: []
   },
   mounted() {
     setTimeout(() => {
@@ -28,6 +29,24 @@ const app = new Vue({
     },
     checkbox(event) {
       this.showMessage = !this.showMessage;
+    },
+    addTask(event) {
+      const task = { text: event.target.value, done: false };
+      event.target.value = '';
+      this.tasks.push(task);
+    },
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+    },
+    done(index) {
+      this.tasks[index].done = !this.tasks[index].done;
+    },
+    taskClass(index) {
+      if (this.tasks[index].done) {
+        return 'textDecoration: line-through';
+      } else {
+        return 'textDecoration: none';
+      }
     }
   },
   computed: {

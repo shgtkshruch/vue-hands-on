@@ -20,6 +20,17 @@
         <input type="text" v-model="lastName" />
         <p>氏名: {{ fullName }}</p>
       </div>
+
+      <div>
+        <input type="text" v-on:keyup.enter="addTask" />
+        <ul >
+          <li v-for="(task, index) in tasks">
+            <input type="checkbox" v-on:click="done(index)" />
+            <span v-bind:style="taskClass(index)">{{ task.text }}</span>
+            <button v-on:click="deleteTask(index)">Delete</button>
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
