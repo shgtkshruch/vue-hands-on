@@ -4,11 +4,11 @@ const app = new Vue({
     message: 'Hello World!'
   },
   mounted() {
-    this.message = 'mounted!'
+    this.message = 'mounted!';
   },
   watch: {
     message(val, oldVal) {
       console.log('new: %s, old: %s', val, oldVal);
     }
-  }
+  },
 });
