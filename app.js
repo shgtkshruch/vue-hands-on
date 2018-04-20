@@ -19,5 +19,10 @@ const app = new Vue({
     input(event) {
       this.message = event.target.value;
     }
+  },
+  computed: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
   }
 });
