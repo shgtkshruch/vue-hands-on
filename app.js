@@ -10,6 +10,7 @@ const app = new Vue({
       padding: '0.5rem',
       textAlign: 'center',
     },
+    showMessage: true,
   },
   mounted() {
     setTimeout(() => {
@@ -24,6 +25,9 @@ const app = new Vue({
   methods: {
     input(event) {
       this.message = event.target.value;
+    },
+    checkbox(event) {
+      this.showMessage = !this.showMessage;
     }
   },
   computed: {
