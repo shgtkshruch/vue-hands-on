@@ -4,6 +4,12 @@ const app = new Vue({
     firstName: '苗字',
     lastName: '名前',
     message: 'Hello World!',
+    styleObject: {
+      color: 'white',
+      backgroundColor: 'red',
+      padding: '0.5rem',
+      textAlign: 'center',
+    },
   },
   mounted() {
     setTimeout(() => {

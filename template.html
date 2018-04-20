@@ -9,7 +9,9 @@
     <div id="app">
       <div>
         <input type="text" v-on:input="input" v-bind:value="message" />
-        <p>{{ message }}</p>
+        <p v-bind:class="message" v-bind:style="styleObject">
+          {{ message }}
+        </p>
       </div>
 
       <div>
